@@ -1,0 +1,10 @@
+We do not have docker packaged yet.
+
+--- pytest_salt_factories-1.0.4/requirements/tests.txt.orig	2024-10-23 15:42:44.055971816 +0200
++++ pytest_salt_factories-1.0.4/requirements/tests.txt	2024-10-23 15:42:50.466994503 +0200
+@@ -1,5 +1,4 @@
+ -r requirements/base.txt
+-docker>=4.0.0
+ pytest-subtests
+ pyfakefs
+ importlib-metadata
