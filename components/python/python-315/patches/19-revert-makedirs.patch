@@ -15,12 +15,12 @@ For reference:
 
 --- Python-3.14.8/Lib/os.py.orig
 +++ Python-3.14.8/Lib/os.py
-@@ -223,7 +223,7 @@
-         head, tail = path.split(head)
-     if head and tail and not path.exists(head):
-         try:
--            makedirs(head, exist_ok=exist_ok)
-+            makedirs(head, mode, exist_ok)
+@@ -241,7 +241,7 @@
+                 makedirs(head, mode=parent_mode, exist_ok=exist_ok,
+                          parent_mode=parent_mode)
+             else:
+-                makedirs(head, exist_ok=exist_ok)
++                makedirs(head, mode, exist_ok)
          except FileExistsError:
              # Defeats race condition when another thread created the path
              pass
