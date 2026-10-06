@@ -31,7 +31,8 @@ USE_CTF = yes
 include ../../../make-rules/shared-macros.mk
 
 COMPONENT_NAME =		Python
-COMPONENT_VERSION =		3.14.8
+HUMAN_VERSION =			3.15.0rc3
+COMPONENT_VERSION =		3.15.0
 PYTHON_VERSION =		$(basename $(COMPONENT_VERSION))
 PYV =				$(subst .,,$(PYTHON_VERSION))
 COMPONENT_SUMMARY =		The Python interpreter, libraries and utilities
