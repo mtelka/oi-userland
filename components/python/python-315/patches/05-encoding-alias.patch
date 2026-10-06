@@ -5,22 +5,22 @@ The patch comes from solaris-userland.
 
 --- Python-3.14.8/Lib/encodings/aliases.py.orig
 +++ Python-3.14.8/Lib/encodings/aliases.py
-@@ -83,6 +83,7 @@
+@@ -86,6 +86,7 @@
  
      # cp1251 codec
      '1251'               : 'cp1251',
 +    'ansi_1251'          : 'cp1251',
+     'cswindows1251'      : 'cp1251',
      'windows_1251'       : 'cp1251',
  
-     # cp1252 codec
-@@ -247,6 +248,7 @@
+@@ -272,6 +273,7 @@
      'u_jis'              : 'euc_jp',
  
      # euc_kr codec
 +    '5601'               : 'euc_kr',
+     'cseuckr'            : 'euc_kr',
      'euckr'              : 'euc_kr',
-     'korean'             : 'euc_kr',
-     'ksc5601'            : 'euc_kr',
+ 
 @@ -500,6 +502,7 @@
      'shiftjis'           : 'shift_jis',
      'sjis'               : 'shift_jis',
