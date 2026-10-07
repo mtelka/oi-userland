@@ -2,14 +2,14 @@ https://github.com/python/cpython/issues/127344
 
 --- Python-3.14.8/Modules/socketmodule.c.orig
 +++ Python-3.14.8/Modules/socketmodule.c
-@@ -3352,6 +3352,7 @@
+@@ -3354,6 +3354,7 @@
      int optname;
      int res;
-     Py_buffer optval;
+     Py_buffer buffer;
 +    int buflen;
      int flag;
      unsigned int optlen;
-     PyObject *none;
+     PyObject *optval;
 @@ -3385,8 +3386,15 @@
              goto done;
          }
