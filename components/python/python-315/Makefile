@@ -60,6 +60,7 @@ CFLAGS += $(XPG6MODE)
 # This is needed to make sure our Setup.local is really used
 CLONEY_MODE = copy
 
+CONFIGURE_OPTIONS += --disable-epoll
 CONFIGURE_OPTIONS += --enable-shared
 CONFIGURE_OPTIONS += --enable-optimizations
 CONFIGURE_OPTIONS += --enable-loadable-sqlite-extensions
