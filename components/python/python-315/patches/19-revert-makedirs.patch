@@ -1,17 +1,33 @@
 This patch reverts changes made to `os.makedirs()` in Python 3.7.
 
 Prior to Python 3.7, mode argument also affected newly-created
-intermediate-level directories, and that is not the case anymore [1]. The
-reason was that with mode preventing directory creating, the function fails
-after it creates the first intermediate-level directory.
+intermediate-level directories, and that was not the case for Python since
+version 3.7 up to version 3.14 [1]. The reason was that with mode preventing
+directory creating, the function fails after it creates the first
+intermediate-level directory.
 
 Since there is Solaris code that depends on the old behavior, this patch brings
-it back. Note that we are not the only ones affected by this; upstream is
-already considering reverting this change [2].
+it back. Note that we are not the only ones affected by this and so upstream
+brought this functionality back in Python 3.15 but with a slightly different
+semantics [2] [3].
+
+The long term plan is to drop this patch entirely, however before we can do so
+we need to make sure that all our `os.makedirs()` consumers either do not need
+the old `os.makedirs()` behavior or are properly adapted to work with unpatched
+Python 3.15+ (by adding the `parent_mode` parameter to their `os.makedirs()`
+calls).
+
+List of all our possible `os.makedirs()` consumers we need to evaluate:
+
+illumos-gate - https://www.illumos.org/issues/18508
+oi-userland - TODO
+pkg5 - TODO
+others ... - TODO
 
 For reference:
 [1] https://github.com/python/cpython/issues/64129
 [2] https://github.com/python/cpython/issues/86533
+[3] https://docs.python.org/3.15/library/os.html#os.makedirs
 
 --- Python-3.14.8/Lib/os.py.orig
 +++ Python-3.14.8/Lib/os.py
