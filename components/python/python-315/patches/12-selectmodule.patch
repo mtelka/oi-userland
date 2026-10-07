@@ -4,9 +4,9 @@ RLIMIT_NOFILE is set to RLIM_INFINITY (bug 34982685).
 This was reported upstream:
 https://github.com/python/cpython/issues/102494
 
---- Python-3.14.8/Modules/selectmodule.c.orig
-+++ Python-3.14.8/Modules/selectmodule.c
-@@ -1134,7 +1134,7 @@
+--- Python-3.15.0rc3/Modules/selectmodule.c.orig
++++ Python-3.15.0rc3/Modules/selectmodule.c
+@@ -1167,7 +1167,7 @@
      struct rlimit limit;
  
      /*
@@ -15,7 +15,7 @@ https://github.com/python/cpython/issues/102494
      ** fds, the kernel will give an error, so
      ** we set the limit here. It is a dynamic
      ** value, because we can change rlimit() anytime.
-@@ -1145,6 +1145,15 @@
+@@ -1178,6 +1178,15 @@
          return NULL;
      }
  

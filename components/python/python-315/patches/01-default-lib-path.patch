@@ -1,9 +1,9 @@
 This patch comes from OmniOS.
 See also https://github.com/python/cpython/issues/67476
 
---- Python-3.14.8/Lib/ctypes/util.py.orig
-+++ Python-3.14.8/Lib/ctypes/util.py
-@@ -339,43 +339,56 @@
+--- Python-3.15.0rc3/Lib/ctypes/util.py.orig
++++ Python-3.15.0rc3/Lib/ctypes/util.py
+@@ -340,43 +340,56 @@
      elif sys.platform == "sunos5":
  
          def _findLib_crle(name, is64):

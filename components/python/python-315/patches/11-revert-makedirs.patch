@@ -29,8 +29,8 @@ For reference:
 [2] https://github.com/python/cpython/issues/86533
 [3] https://docs.python.org/3.15/library/os.html#os.makedirs
 
---- Python-3.14.8/Lib/os.py.orig
-+++ Python-3.14.8/Lib/os.py
+--- Python-3.15.0rc3/Lib/os.py.orig
++++ Python-3.15.0rc3/Lib/os.py
 @@ -241,7 +241,7 @@
                  makedirs(head, mode=parent_mode, exist_ok=exist_ok,
                           parent_mode=parent_mode)
@@ -40,9 +40,9 @@ For reference:
          except FileExistsError:
              # Defeats race condition when another thread created the path
              pass
---- Python-3.14.8/Lib/test/test_os.py.orig
-+++ Python-3.14.8/Lib/test/test_os/test_os.py
-@@ -1946,12 +1946,12 @@
+--- Python-3.15.0rc3/Lib/test/test_os/test_os.py.orig
++++ Python-3.15.0rc3/Lib/test/test_os/test_os.py
+@@ -2151,12 +2151,12 @@
              base = os_helper.TESTFN
              parent = os.path.join(base, 'dir1')
              path = os.path.join(parent, 'dir2')
@@ -57,4 +57,4 @@ For reference:
 +                self.assertEqual(os.stat(parent).st_mode & 0o777, 0o755)
  
      @unittest.skipIf(
-         support.is_wasi,
+         support.is_emscripten or support.is_wasi,

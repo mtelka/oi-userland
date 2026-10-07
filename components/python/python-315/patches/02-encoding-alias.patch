@@ -3,8 +3,8 @@ but the suitability (or lack thereof) has not yet been determined.
 
 The patch comes from solaris-userland.
 
---- Python-3.14.8/Lib/encodings/aliases.py.orig
-+++ Python-3.14.8/Lib/encodings/aliases.py
+--- Python-3.15.0rc3/Lib/encodings/aliases.py.orig
++++ Python-3.15.0rc3/Lib/encodings/aliases.py
 @@ -86,6 +86,7 @@
  
      # cp1251 codec
@@ -21,7 +21,7 @@ The patch comes from solaris-userland.
      'cseuckr'            : 'euc_kr',
      'euckr'              : 'euc_kr',
  
-@@ -500,6 +502,7 @@
+@@ -546,6 +548,7 @@
      'shiftjis'           : 'shift_jis',
      'sjis'               : 'shift_jis',
      's_jis'              : 'shift_jis',
@@ -29,7 +29,7 @@ The patch comes from solaris-userland.
  
      # shift_jis_2004 codec
      'shiftjis2004'       : 'shift_jis_2004',
-@@ -516,6 +519,7 @@
+@@ -563,6 +566,7 @@
      'tis_620_0'          : 'tis_620',
      'tis_620_2529_0'     : 'tis_620',
      'tis_620_2529_1'     : 'tis_620',
