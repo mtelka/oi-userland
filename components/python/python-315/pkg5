@@ -19,9 +19,9 @@
         "system/library/math"
     ],
     "fmris": [
-        "library/python/idle-314",
-        "library/python/tkinter-314",
-        "runtime/python-314"
+        "library/python/idle-315",
+        "library/python/tkinter-315",
+        "runtime/python-315"
     ],
     "name": "Python"
 }
